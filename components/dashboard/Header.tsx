@@ -14,7 +14,7 @@ const Header = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center gap-3 sm:gap-3 ml-auto">
+      <div className="flex items-center gap-5 justify-end ">
         {/* Notifications */}
         <Message /> 
         <Notification />
