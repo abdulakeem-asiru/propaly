@@ -21,7 +21,7 @@ const LeadLists = () =>{
 
   <div className="divide-y divide-[var(--border-color)]">
     {leads.map((lead) => (
-      <div key={lead.id} className="p-5 hover:bg-[var(--bg-hover)] transition-colors">
+      <div key={lead.id} className="p-6 hover:bg-[var(--bg-hover)] transition-colors">
         <div className="flex items-start justify-between">
           <div className="flex items-start gap-4 flex-1">
             {/* Avatar */}
@@ -32,7 +32,7 @@ const LeadLists = () =>{
             </div>
 
             {/* Lead Info */}
-            <div className="flex-1 min-w-0">
+            <div className="flex flex-col gap-1 ">
               <div className="flex items-center gap-2 mb-1">
                 <h4 className="text-[var(--text-primary)] font-medium text-[16px]">{lead.name}</h4>
                 {lead.status === "new" && (
@@ -56,7 +56,7 @@ const LeadLists = () =>{
                   </span>
                 )}
                 {lead.priority === "high" && (
-                  <span className="text-[var(--text-danger)] text-[11px] font-medium">● High Priority</span>
+                  <span className="text-[var(--text-success)] text-[11px] font-medium">● High Priority</span>
                 )}
               </div>
 
