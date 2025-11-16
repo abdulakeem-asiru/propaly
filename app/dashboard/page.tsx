@@ -6,7 +6,7 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <section className='p-8 max-w-[1440px] mx-auto space-y-6'>
+    <section className='p-8 mx-auto space-y-6'>
       {/* Welcome Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-medium text-[var(--text-primary)] mb-2">

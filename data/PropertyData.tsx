@@ -1,18 +1,10 @@
 import { Property } from "@/components/properties/Table/columns";
+import { Lekki, Estate } from "../assets/images";
 
- export const PropertyData : Property[]=  [{
-  id: "cst001",
-  property: { name: "Lekki Haven", imageUrl: "/lekki.jpg" },
-  propertiesType: "House",
-  size: 1000,
-  location: "Lagos",
-  bedroom : 4,
-  price: 30000,
-  PropertyFor : "Rent"
-},
- {
+export const PropertyData: Property[] = [
+  {
     id: "cst001",
-    property: { name: "Lekki Haven", imageUrl: "/lekki.jpg" },
+    property: { name: "Lekki Haven", imageUrl: Lekki.src },
     propertiesType: "House",
     size: 1000,
     location: "Lagos",
@@ -22,7 +14,7 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst002",
-    property: { name: "Ikoyi Crest", imageUrl: "/estate.jpg" },
+    property: { name: "Ikoyi Crest", imageUrl: Estate.src },
     propertiesType: "Duplex",
     size: 1200,
     location: "Abuja",
@@ -32,7 +24,7 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst003",
-    property: { name: "Banana Court", imageUrl: "/lekki.jpg" },
+    property: { name: "Banana Court", imageUrl: Lekki.src },
     propertiesType: "Bungalow",
     size: 800,
     location: "Lagos",
@@ -42,7 +34,7 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst004",
-    property: { name: "Mainland Grove", imageUrl: "/estate.jpg" },
+    property: { name: "Mainland Grove", imageUrl: Estate.src },
     propertiesType: "Apartment",
     size: 600,
     location: "Ibadan",
@@ -52,7 +44,7 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst005",
-    property: { name: "Victoria Nest", imageUrl: "/lekki.jpg" },
+    property: { name: "Victoria Nest", imageUrl: Lekki.src },
     propertiesType: "House",
     size: 950,
     location: "Lagos",
@@ -62,7 +54,7 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst006",
-    property: { name: "Emerald Estate", imageUrl: "/estate.jpg" },
+    property: { name: "Emerald Estate", imageUrl: Estate.src },
     propertiesType: "Duplex",
     size: 1100,
     location: "Abuja",
@@ -72,7 +64,7 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst007",
-    property: { name: "Green Fields", imageUrl: "/lekki.jpg" },
+    property: { name: "Green Fields", imageUrl: Lekki.src },
     propertiesType: "Bungalow",
     size: 750,
     location: "Lagos",
@@ -82,7 +74,7 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst008",
-    property: { name: "Sunrise Villas", imageUrl: "/estate.jpg" },
+    property: { name: "Sunrise Villas", imageUrl: Estate.src },
     propertiesType: "Apartment",
     size: 650,
     location: "Enugu",
@@ -92,7 +84,7 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst009",
-    property: { name: "Ocean Breeze", imageUrl: "/lekki.jpg" },
+    property: { name: "Ocean Breeze", imageUrl: Lekki.src },
     propertiesType: "House",
     size: 1050,
     location: "Port Harcourt",
@@ -102,21 +94,12 @@ import { Property } from "@/components/properties/Table/columns";
   },
   {
     id: "cst010",
-    property: { name: "Cedar Park", imageUrl: "/estate.jpg" },
+    property: { name: "Cedar Park", imageUrl: Estate.src },
     propertiesType: "Duplex",
     size: 1150,
     location: "Lagos",
     bedroom: 5,
     price: 52000,
     PropertyFor: "Rent",
-  },
-{
-  id: "cst001",
-  property: { name: "Lekki Haven", imageUrl: "/estate.jpg" },
-  propertiesType: "House",
-  size: 1000,
-  location: "Lagos",
-  bedroom : 4,
-  price: 30000,
-  PropertyFor : "Rent"
-}]
+  }
+];

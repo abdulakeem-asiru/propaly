@@ -9,7 +9,7 @@ const Page = () => {
   const data: Property[] = PropertyData;
   
   return (
-    <section className='p-8 max-w-[1440px] mx-auto space-y-6'>
+    <section className='p-8 mx-auto space-y-6'>
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
@@ -28,7 +28,7 @@ const Page = () => {
         <CardWrapper />
       </div>
 
-      <div className="w-full mx-auto py-4 ">
+      <div className="w-full">
         <DataTable columns={columns} tableData={data} heading="Properties List" filter = ""/>
       </div>
   
