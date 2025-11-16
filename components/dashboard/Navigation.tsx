@@ -22,7 +22,7 @@ const mainLinks = [
   { name: "Properties", href: "/dashboard/properties", icon: Building2 },
   { name: "Leads", href: "/dashboard/leads", icon: CalendarCheck2 },
   { name: "Analytics", href: "/dashboard/analytics", icon: FileChartColumn },
-  { name: "Marketing Tools", href: "/dashboard/orders", icon: ClipboardList },
+  { name: "Marketing Tools", href: "/dashboard/marketing", icon: ClipboardList },
   { name: "Website Editor", href: "/dashboard/website-editor", icon: ArrowLeftRight },
 ];
 
