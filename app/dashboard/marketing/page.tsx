@@ -2,6 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
+    <section className='p-8'>
    <div className="w-full h-screen bg-white border border-[var(--border-color)] rounded-xl flex flex-col items-center justify-center text-center p-6">
   
   <div className="w-14 h-14 rounded-full bg-[var(--primary-color)]/10 flex items-center justify-center mb-4">
@@ -28,8 +29,8 @@ const page = () => {
     This feature is currently under development. We’re working hard to bring it to you soon.
   </p>
 
-</div>
-
+  </div>
+    </section>
   )
 }
 

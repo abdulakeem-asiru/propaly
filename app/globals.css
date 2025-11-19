@@ -51,10 +51,12 @@ input[type="number"]::-webkit-outer-spin-button {
   --radius: 0.625rem;
   --bg-surfaceLv1 : #F7f7f7;
   --bg-surfaceLv2 : #FAFAFA;
-  --warning : #FFF0E9;
+  --warning-color: #F59E0B;
   --text-danger : #F33F54;
   --success : #E7F6EE;
-  --text-success : #11964F;
+  --text-success : #20bd69;
+  --success-color : #0f9f52;
+  --info-color: #3B82F6;
 
   
   --card: oklch(1 0 0);

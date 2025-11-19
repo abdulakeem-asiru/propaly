@@ -29,7 +29,7 @@ const Page = () => {
       </div>
 
       <div className="w-full">
-        <DataTable columns={columns} tableData={data} heading="Properties List" filter = ""/>
+        <DataTable columns={columns} tableData={data} heading="Properties List" />
       </div>
   
     </section>

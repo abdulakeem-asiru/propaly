@@ -36,14 +36,12 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   tableData: TData[]
   heading: string
-  filter: string
 }
 
 export function DataTable<TData, TValue>({
   heading,
   columns,
   tableData,
-  filter,
 }: DataTableProps<TData, TValue>) {
   const data = React.useMemo(() => tableData, [tableData])
 
@@ -72,7 +70,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="w-full p-4 border-2 border-[var(--border-color)] rounded-lg bg-[var(--background)] relative overflow-x-auto">
+    <div className="w-full p-4 border border-[var(--border-color)] rounded-lg bg-[var(--background)] relative overflow-x-auto">
       <div className="flex items-center justify-between py-4 max-sm:flex-col max-sm:items-start gap-2">
         <h2 className="text-[var(--text-primary)] font-semibold text-[18px]">{heading}</h2>
 
@@ -109,7 +107,7 @@ export function DataTable<TData, TValue>({
         </div>
       </div>
 
-      <div className="rounded-lg border-2 border-[var(--border-color)] p-1 overflow-x-auto">
+      <div className="rounded-lg border border-[var(--border-color)] p-1 overflow-x-auto">
         <Table className="table-auto">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

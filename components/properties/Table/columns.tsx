@@ -27,13 +27,13 @@ export type Property = {
   price: number
   PropertyFor: "Rent" | "Sale"
 }
-interface CustomerCellProp{
+interface PropertyCellProp{
   name : string,
   imageUrl : string
 }
 
 
-const PropertyCell = ({ name, imageUrl } : CustomerCellProp) => (
+const PropertyCell = ({ name, imageUrl } : PropertyCellProp) => (
   <div className="flex items-center space-x-2 min-w-[200px]">
     <Image src={imageUrl} alt={name} width={50} height={50} className="rounded-3xl object-fill" />
     <span>{name}</span>
