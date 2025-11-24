@@ -74,6 +74,7 @@ const Features = () => {
         </div>
 
       </div>
+      <div className='h-300'></div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react'
 
 const Header = () => {
   return (
-    <div className='px-4 md:px-8 py-4 flex flex-wrap md:flex-nowrap items-center justify-between gap-4 w-full'>
+    <div className='px-4 md:px-8  flex flex-wrap md:flex-nowrap items-center justify-between gap-4 w-full'>
       
       {/* Search */}
       <div className='flex-1 min-w-[200px]'>
