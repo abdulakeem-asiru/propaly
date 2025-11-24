@@ -1,6 +1,6 @@
 'use client'
 import { useRef } from 'react';
-import { Mockup, HeroImg, Mockup2 } from '@/assets/images';
+import { Mockup, Mockup2 } from '@/assets/images';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Features = () => {
   const columnRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
- const images = [Mockup, HeroImg, Mockup2, Mockup,]; 
+ const images = [Mockup,  Mockup2, Mockup, Mockup2]; 
        // Preload images to avoid flicker
     // images.forEach(img => {
     //   const p = new Image();
