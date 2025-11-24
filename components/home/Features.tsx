@@ -12,10 +12,10 @@ const Features = () => {
   const imageRef = useRef<HTMLDivElement>(null);
  const images = [Mockup, HeroImg, Mockup2, Mockup,]; 
        // Preload images to avoid flicker
-    images.forEach(img => {
-      const p = new Image();
-      p.src = img.src;
-    });
+    // images.forEach(img => {
+    //   const p = new Image();
+    //   p.src = img.src;
+    // });
 
 
   useGSAP(() => {
