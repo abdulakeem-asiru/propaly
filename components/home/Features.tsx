@@ -51,17 +51,17 @@ const Features = () => {
 
   return (
     <div className="flex flex-col gap-8 items-center">
-      <h2 className="text-4xl font-semibold max-w-[500px] text-center leading-12">
+      <h2 className="text-4xl text-black/80 font-semibold max-w-[500px] text-center leading-10">
         Powerful Features to Transform Realtors Journey
       </h2>
 
       <div className="grid grid-cols-2 gap-4 w-7xl rounded-lg p-6">
 
         <div ref={columnRef} className="flex flex-col gap-4">
-          <div className="sticky-card w-full h-80 bg-gray-300 rounded-2xl sticky top-20 border-t"></div>
-          <div className="sticky-card w-full h-80 bg-gray-300 rounded-2xl sticky top-25 border-t"></div>
-          <div className="sticky-card w-full h-80 bg-gray-300 rounded-2xl sticky top-30 border-t"></div>
-          <div className="sticky-card w-full h-80 bg-gray-300 rounded-2xl sticky top-35 border-t"></div>
+          <div className="sticky-card w-full h-80 bg-black rounded-2xl sticky top-20 border-t"></div>
+          <div className="sticky-card w-full h-80 bg-black rounded-2xl sticky top-25 border-t"></div>
+          <div className="sticky-card w-full h-80 bg-black rounded-2xl sticky top-30 border-t"></div>
+          <div className="sticky-card w-full h-80 bg-black rounded-2xl sticky top-35 border-t"></div>
           <div className="sticky-card w-full h-80 bg-transparent rounded-2xl sticky top-40"></div>
         </div>
 
