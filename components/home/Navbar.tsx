@@ -5,7 +5,7 @@ import {  ArrowRight } from 'lucide-react'
 
 const Navbar = () => {
   return (
-    <header className="max-w-[850px] h-18 border border-white rounded-md shadow-md bg-white mx-auto flex items-center justify-between py-6 px-3 sticky top-4 backdrop-blur-md">
+    <header className="max-w-[850px] h-18 border border-white rounded-md shadow-md bg-white mx-auto flex items-center justify-between mt-10 py-6 px-3 sticky top-0 z-50 backdrop-blur-md">
         <Logo />
       <NavMenu />
           <button 
