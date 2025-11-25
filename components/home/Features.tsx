@@ -78,12 +78,12 @@ const Features = () => {
           return (
           <div
             key={feature.title}
-            className={`sticky-card top-${20 + (5 * index)} items-center justify-center w-full h-80 bg-gray-100 border-white rounded-2xl sticky top-20 border-t-2`}
+            className={`sticky-card top-${20 + (5 * index)} items-center justify-center w-full h-70 bg-gray-100 border-white rounded-2xl sticky top-20 border-t-2`}
           >
             <div className='p-8'>
               <Icon className="w-10 h-10 m-4 text-(--primary-color)" />
               <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-black/80">{feature.title}</h3>
                 <p className="text-(--text-secondary)">{feature.description}</p>
               </div>
             </div>
