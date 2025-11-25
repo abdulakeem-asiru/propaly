@@ -1,3 +1,4 @@
+'use client';
 import {
   Crown,
   BarChart3,
@@ -6,8 +7,9 @@ import {
   Smile,
   ShieldCheck
 } from "lucide-react";
-
-
+import useFadeInUp from "@/hooks/animation/useFadeInUp";
+import useStaggerEffect from "@/hooks/animation/useStaggerEffect";
+import { use } from "react";
 export const OurValues = [
   {
     title: "Expert Team",
@@ -49,13 +51,15 @@ export const OurValues = [
 
 
 const Value = () =>{
+    useStaggerEffect(".staggered-cards > div");
+    const fadeInUpRef = useFadeInUp()
     return(
-        <div className="flex flex-col gap-12 items-center">
+        <div className="flex flex-col gap-12 items-center" ref={fadeInUpRef}>
              <h2 className="text-4xl text-black/80 font-semibold max-w-[600px] text-center leading-10">
        Everything You Need to Convert, <span className="text-(--primary-color)">Retain</span>, and Grow Customers
       </h2>
 
-      <div className="grid grid-cols-3 grid-rows-2 gap-4 ">
+      <div className="grid grid-cols-3 grid-rows-2 gap-4 staggered-cards">
         {OurValues.map(({ title, description, icon: Icon }) => (
           <div key={title} className="w-sm h-60 border border-(--primary-color)/30 rounded-2xl p-6 flex flex-col gap-2">
             <Icon className="w-10 h-10 border border-(--primary-color)/20 p-2 rounded-full text-(--primary-color) mb-2 " />

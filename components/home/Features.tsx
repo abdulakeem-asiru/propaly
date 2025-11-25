@@ -6,10 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
 import { Contact, Laptop2, Megaphone, Workflow } from 'lucide-react';
+import useFadeInUp from '@/hooks/animation/useFadeInUp';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Features = () => {
+  const fadeInUpRef = useFadeInUp();
   const columnRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<HTMLImageElement[]>([]); // ref array for all images
   const images = [Mockup, Mockup2, Mockup, Mockup2, Mockup]; 
@@ -65,7 +67,7 @@ const Features = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-8 items-center">
+    <div className="flex flex-col gap-8 items-center" ref={fadeInUpRef}>
       <h2 className="text-4xl text-black/80 font-semibold max-w-[500px] text-center leading-10">
         Powerful Features to Transform <span className="text-(--primary-color)">Realtors</span> Journey
       </h2>
