@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { TrustedClient } from "@/components/home/TrustedClient";
 import Features from "@/components/home/Features";
+import Value from "@/components/home/Value";
 
 
 export default function Home() {
@@ -34,6 +35,9 @@ export default function Home() {
       </div>
       <div>
         <Features />
+      </div>
+      <div className="mt-16">
+        <Value />
       </div>
     </section>
   );
