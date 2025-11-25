@@ -57,7 +57,7 @@ const Features = () => {
     cards.forEach((card, index) => {
       ScrollTrigger.create({
         trigger: card,
-        markers: true,
+        start: "40% top",
         onEnter: () => setActiveImage(index),
         onEnterBack: () => setActiveImage(index)
       });
