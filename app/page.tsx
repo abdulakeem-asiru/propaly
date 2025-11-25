@@ -7,6 +7,7 @@ import Features from "@/components/home/Features";
 import Value from "@/components/home/Value";
 
 
+
 export default function Home() {
   return (
     <section>
@@ -39,6 +40,7 @@ export default function Home() {
       <div className="mt-16">
         <Value />
       </div>
+      <div className="h-300 bg-linear-to-b from-white to-(--primary-color)/10"></div>
     </section>
   );
 }
