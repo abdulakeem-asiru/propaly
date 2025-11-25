@@ -79,7 +79,8 @@ const Features = () => {
           return (
           <div
             key={feature.title}
-            className={`sticky-card top-${20 + (5 * index)} items-center justify-center w-full h-70 bg-gray-100 border-white rounded-2xl sticky top-20 border-t-2`}
+            className={`sticky-card items-center justify-center w-full h-70 bg-gray-100 border-white rounded-2xl sticky top-20 border-t-2`}
+            style={{ top: `${80 + 15 * index}px` }}
           >
             <div className='p-8'>
               <Icon className="w-10 h-10 m-4 text-(--primary-color)" />
