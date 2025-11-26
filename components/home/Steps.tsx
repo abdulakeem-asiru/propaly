@@ -54,7 +54,6 @@ useGSAP(() => {
 
   if (!section || !trigger) return;
 
-  // Calculate total scroll amount based on content width
   const totalWidth = section.scrollWidth - window.innerWidth;
 
   gsap.to(section, {
@@ -74,7 +73,7 @@ useGSAP(() => {
 
   return (
     <section className="overflow-x-hidden">
-    <div  ref={triggerRef}>
+    <div  ref={triggerRef} className="mt-10">
     <div className="flex gap-8 px-10 mb-20" ref={sectionRef}>
       {stepsContent.map((step, index) => (
         <div
