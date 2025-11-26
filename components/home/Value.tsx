@@ -54,7 +54,7 @@ const Value = () =>{
     useStaggerEffect(".staggered-cards > div");
     const fadeInUpRef = useFadeInUp()
     return(
-        <div className="flex flex-col gap-12 items-center" ref={fadeInUpRef}>
+<div className="flex flex-col gap-12 items-center" ref={fadeInUpRef}>
              <h2 className="text-4xl text-black/80 font-semibold max-w-[600px] text-center leading-10">
        Everything You Need to Convert, <span className="text-(--primary-color)">Retain</span>, and Grow Customers
       </h2>

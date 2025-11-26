@@ -3,6 +3,7 @@ import { TrustedClient } from "@/components/home/TrustedClient";
 import Features from "@/components/home/Features";
 import Value from "@/components/home/Value";
 import Hero from "@/components/home/Hero";
+import Steps from "@/components/home/Steps";
 
 export default function Home() {
   return (
@@ -19,7 +20,10 @@ export default function Home() {
       <div className="mt-16">
         <Value />
       </div>
-      <div className="h-300 bg-linear-to-b from-white to-(--primary-color)/10"></div>
+      <div className="bg-linear-to-b from-white to-(--primary-color)/10">
+      <Steps />
+      </div>
+      <div className="h-200"></div>
     </section>
   );
 }
