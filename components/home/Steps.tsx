@@ -65,15 +65,15 @@ useGSAP(() => {
       end: () => `+=${totalWidth}`,
       scrub: 1,
       pin: true,
-      invalidateOnRefresh: true, 
-      markers: true,
+      invalidateOnRefresh: true,
+      markers : true
     },
   });
 });
 
   return (
-    <section className="overflow-x-hidden">
-    <div  ref={triggerRef} className="mt-10">
+    <section className="overflow-x-hidden mt-30">
+    <div  ref={triggerRef}>
     <div className="flex gap-8 px-10 mb-20" ref={sectionRef}>
       {stepsContent.map((step, index) => (
         <div

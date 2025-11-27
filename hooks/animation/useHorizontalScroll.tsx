@@ -16,8 +16,6 @@ useGSAP(() => {
   const trigger = triggerRef.current;
 
   if (!section || !trigger) return;
-
-  // Calculate total scroll amount based on content width
   const totalWidth = section.scrollWidth - window.innerWidth;
 
   gsap.to(section, {

@@ -72,7 +72,7 @@ const Features = () => {
         Powerful Features to Transform <span className="text-(--primary-color)">Realtors</span> Journey
       </h2>
 
-      <div className="grid grid-cols-2 gap-4 w-7xl rounded-lg p-6">
+      <div className="grid grid-cols-2 gap-4 w-7xl rounded-lg p-8">
         {/* Sticky Cards */}
         <div ref={columnRef} className="flex flex-col gap-4">
           {featuresContent.map((feature, index) => {
