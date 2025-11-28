@@ -1,5 +1,5 @@
 'use client'
-import { Mockup } from "@/assets/images";
+import { Mockup, Plane, CardMini, CoinMini, HouseMini } from "@/assets/images";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -65,8 +65,7 @@ useGSAP(() => {
       end: () => `+=${totalWidth}`,
       scrub: 1,
       pin: true,
-      invalidateOnRefresh: true,
-      markers : true
+      invalidateOnRefresh: true
     },
   });
 });
@@ -102,9 +101,16 @@ useGSAP(() => {
 
             {/* icons row */}
             <div className="flex gap-4">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="w-20 h-20 bg-white/40 rounded-2xl"></div>
-              ))}
+                <div className="w-30 h-20 bg-[#eedabe] rounded-2xl flex justify-center items-center">
+                <Image src={Plane.src} alt="Plane Img" width={50} height={50}/></div>
+                <div className="w-30 h-20 bg-[#0be49b] rounded-2xl flex justify-center items-center">
+                <Image src={CardMini.src} alt="Plane Img" width={50} height={50}/></div>
+                <div className="w-30 h-20 bg-[#cee9df] rounded-2xl flex justify-center items-center">
+                <Image src={HouseMini.src} alt="Plane Img" width={50} height={50}/></div>
+                <div className="w-30 h-20 bg-[#f1f9f6] rounded-2xl flex justify-center items-center">
+                <Image src={CoinMini.src} alt="Plane Img" width={50} height={50}/></div>
+              
+    
             </div>
           </div>
 

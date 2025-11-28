@@ -43,7 +43,7 @@ function NavSection({
 }) {
   return (
     <div className="hidden md:block">
-      <p className="text-xs text-[var(--text-primary)] font-medium mb-3 ml-3 uppercase tracking-wide">
+      <p className="text-xs text-(--text-primary) font-medium mb-3 ml-3 uppercase tracking-wide">
         {title}
       </p>
 
@@ -88,12 +88,12 @@ export default function Navigation() {
 export function NavigationFooter() {
 const pathname = usePathname();
   return (
-    <div className="border-t border-[var(--border-color)] flex justify-between items-center px-4">
+    <div className="border-t border-(--border-color) flex justify-between items-center px-4">
       <Link className={clsx(
           "flex h-10 items-center gap-1 text-[16px] transition-colors rounded-md",
-          "text-[var(--text-secondary)] hover:text-[var(--text-primary)]",
+          "text-(--text-secondary) hover:text-(--text-primary)",
                 {
-                  "text-black font-medium":
+                  "text-(--text-primary)/20 font-medium":
                     pathname === "/profile",
                 })} href="/profile">
           <User  size={20}/>Profile
