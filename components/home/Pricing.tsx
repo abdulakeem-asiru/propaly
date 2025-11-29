@@ -1,12 +1,11 @@
 'use client'
-import useFadeInUp from '@/hooks/animation/useFadeInUp';
+
 import { DollarSign, Check, CircleStar } from 'lucide-react'
 import Link from 'next/link';
 
 const Pricing = () => {
-    const fadeInUpRef = useFadeInUp();
   return (
-    <div className='flex items-center gap-6 flex-col pb-20' ref={fadeInUpRef} >
+    <div className='flex items-center gap-6 flex-col pb-20' >
       <h3 className='text-4xl font-semibold max-w-lg text-center leading-10'>Choose a flexible plan that fits your needs</h3>
       <div className='flex gap-6 items-center justify-center mt-15'>
         <div className='w-100 border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
