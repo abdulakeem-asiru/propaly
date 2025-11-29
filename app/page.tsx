@@ -4,6 +4,7 @@ import Features from "@/components/home/Features";
 import Value from "@/components/home/Value";
 import Hero from "@/components/home/Hero";
 import Steps from "@/components/home/Steps";
+import Pricing from "@/components/home/Pricing";
 
 export default function Home() {
   return (
@@ -20,10 +21,12 @@ export default function Home() {
       <div className="mt-16">
         <Value />
       </div>
-      <div className="bg-linear-to-b from-white to-(--primary-color)/10">
+      <div className="bg-linear-to-b from-white via-(--primary-color)/10 to-white">
       <Steps />
       </div>
-      <div className="h-200"></div>
+         <div className="mt-20">
+        <Pricing />
+      </div>
     </section>
   );
 }

@@ -72,6 +72,7 @@ useGSAP(() => {
 
   return (
     <section className="overflow-x-hidden mt-30">
+    <div>
     <div  ref={triggerRef}>
     <div className="flex gap-8 px-10 mb-20" ref={sectionRef}>
       {stepsContent.map((step, index) => (
@@ -128,7 +129,8 @@ useGSAP(() => {
 
     </div>
     </div>
-    </section>
+    </div>
+    </section>    
   );
 };
 
