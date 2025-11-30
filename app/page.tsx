@@ -5,6 +5,7 @@ import Value from "@/components/home/Value";
 import Hero from "@/components/home/Hero";
 import Steps from "@/components/home/Steps";
 import Pricing from "@/components/home/Pricing";
+import { Faq } from "@/components/home/Faq";
 
 export default function Home() {
   return (
@@ -27,6 +28,9 @@ export default function Home() {
          <div className="mt-20">
         <Pricing />
       </div>
+         {/* <div className="mt-20">
+        <Faq />
+      </div> */}
     </section>
   );
 }
