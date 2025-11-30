@@ -68,11 +68,11 @@ const Features = () => {
 
   return (
     <div className="flex flex-col gap-8 items-center" ref={fadeInUpRef}>
-      <h2 className="text-4xl text-black/80 font-semibold max-w-[500px] text-center leading-10">
+      <h2 className="md:text-4xl text-3xl  text-black/80 font-semibold max-w-[500px] text-center leading-10">
         Powerful Features to Transform <span className="text-(--primary-color)">Realtors</span> Journey
       </h2>
 
-      <div className="grid grid-cols-2 gap-4 w-7xl rounded-lg p-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-7xl rounded-lg p-8">
         {/* Sticky Cards */}
         <div ref={columnRef} className="flex flex-col gap-4">
           {featuresContent.map((feature, index) => {
@@ -80,7 +80,7 @@ const Features = () => {
           return (
           <div
             key={feature.title}
-            className={`sticky-card items-center justify-center w-full h-70 bg-white border-2 border-(--primary-color)/10 rounded-2xl sticky top-20 border-b-3`}
+            className={`sticky-card items-center justify-center w-full md:h-70 bg-white border-2 border-(--primary-color)/10 rounded-2xl sticky top-20 border-b-3`}
             style={{ top: `${80 + 15 * index}px` }}
           >
             <div className='p-8'>
@@ -96,7 +96,7 @@ const Features = () => {
         </div>
 
         {/* Image container */}
-        <div className="w-full h-150 rounded-2xl sticky top-20 overflow-hidden">
+        <div className="w-full h-80 md:h-150 rounded-2xl sticky md:top-20 overflow-hidden">
           {images.map((img, i) => (
             <Image
               key={i}
