@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import useFadeInUp from "@/hooks/animation/useFadeInUp";
 import useStaggerEffect from "@/hooks/animation/useStaggerEffect";
-import { use } from "react";
 export const OurValues = [
   {
     title: "Expert Team",

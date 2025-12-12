@@ -20,8 +20,9 @@ const useFadeInUp = (options = {}) => {
        duration: 1,
        ease: "power2.out",
        scrollTrigger: {
+        // markers: true,
         trigger: el,
-        start: "top 30%",
+        start: "top 40%",
         ...options}
         }
     );

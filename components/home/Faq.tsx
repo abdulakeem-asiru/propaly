@@ -1,61 +1,92 @@
+'use client'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import useFadeInUp from "@/hooks/animation/useFadeInUp";
+
+
+const propalyFAQs = [
+  {
+    question: "What is Propaly?",
+    answer:
+      "Propaly is a modern real estate platform designed to help agents, developers, and property owners manage listings, streamline transactions, and grow their business with powerful digital tools."
+  },
+  {
+    question: "Who can use Propaly?",
+    answer:
+      "Real estate agents, property developers, brokers, landlords, and businesses looking to list, manage, or sell properties can all use Propaly."
+  },
+  {
+    question: "What makes Propaly different?",
+    answer:
+      "Propaly stands out with automated workflows, verified property data, easy listing management, embedded analytics, and a seamless experience built specifically for the Nigerian real estate market."
+  },
+  {
+    question: "How do I list a property on Propaly?",
+    answer:
+      "Once you create an account, simply go to your dashboard, click 'Add Property,' upload images, fill in the details, and publish. Your listing goes live instantly."
+  },
+  {
+    question: "Is Propaly free to use?",
+    answer:
+      "Propaly offers a free tier with essential tools and a premium plan with advanced features for scaling your real estate business."
+  },
+  {
+    question: "Can I manage multiple properties?",
+    answer:
+      "Yes! Propaly allows you to manage unlimited listings, track engagements, and monitor property performance in one dashboard."
+  },
+  {
+    question: "Do you verify properties?",
+    answer:
+      "Yes, Propaly conducts verification checks with property owners or developers to reduce fraud and ensure trust in the marketplace."
+  },
+  {
+    question: "Does Propaly help me generate leads?",
+    answer:
+      "Absolutely. Propaly optimizes your listings for discovery, provides built-in lead capture forms, and helps you manage inquiries easily."
+  },
+  {
+    question: "Can I collaborate with other agents?",
+    answer:
+      "Yes, Propaly supports co-listing and allows agents to collaborate securely and transparently on deals."
+  },
+  {
+    question: "How do I contact support?",
+    answer:
+      "You can reach Propaly support anytime via the Help Center, live chat, or email support@propaly.com."
+  }
+];
+
 
 export function Faq() {
+  const fadeInUpRef = useFadeInUp()
   return (
+    <div className="max-w-4xl mx-auto space-y-8">
+      <h3 className="md:text-4xl text-2xl text-center font-semibold mb-10">Frequently Asked Questions</h3>
     <Accordion
       type="single"
       collapsible
       className="w-full"
-      defaultValue="item-1"
+      defaultValue="item-0"
+      ref={fadeInUpRef} 
     >
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Product Information</AccordionTrigger>
+      {propalyFAQs.slice(0,5).map((faq, index) =>(
+          <AccordionItem value={`item-${index}`} key={index} className="border border-black/30 p-4 rounded-lg my-4">
+        <AccordionTrigger className="data-[state=open]:text-primary">
+          {faq.question}</AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
           <p>
-            Our flagship product combines cutting-edge technology with sleek
-            design. Built with premium materials, it offers unparalleled
-            performance and reliability.
-          </p>
-          <p>
-            Key features include advanced processing capabilities, and an
-            intuitive user interface designed for both beginners and experts.
+            {faq.answer}
           </p>
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Shipping Details</AccordionTrigger>
-        <AccordionContent className="flex flex-col gap-4 text-balance">
-          <p>
-            We offer worldwide shipping through trusted courier partners.
-            Standard delivery takes 3-5 business days, while express shipping
-            ensures delivery within 1-2 business days.
-          </p>
-          <p>
-            All orders are carefully packaged and fully insured. Track your
-            shipment in real-time through our dedicated tracking portal.
-          </p>
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Return Policy</AccordionTrigger>
-        <AccordionContent className="flex flex-col gap-4 text-balance">
-          <p>
-            We stand behind our products with a comprehensive 30-day return
-            policy. If you&apos;re not completely satisfied, simply return the
-            item in its original condition.
-          </p>
-          <p>
-            Our hassle-free return process includes free return shipping and
-            full refunds processed within 48 hours of receiving the returned
-            item.
-          </p>
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+      ))}
+
+    </Accordion>      
+    </div>
   )
 }

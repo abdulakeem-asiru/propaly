@@ -28,9 +28,9 @@ export default function Home() {
          <div className="mt-20">
         <Pricing />
       </div>
-         {/* <div className="mt-20">
+         <div>
         <Faq />
-      </div> */}
+      </div>
     </section>
   );
 }
