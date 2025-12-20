@@ -7,7 +7,7 @@ import { MobileNav } from './MobileNav'
 
 const Navbar = () => {
   return (
-    <header className="max-w-[850px] max-md:w-100 h-18 border border-white rounded-md shadow-md bg-white mx-auto flex items-center justify-between mt-10 py-6 px-3 sticky top-0 z-50 backdrop-blur-md">
+    <header className="max-w-[850px] md:w-full h-18 border border-white rounded-md shadow-md bg-white mx-auto flex items-center justify-between mt-10 py-6 px-3 ">
         <Logo />
     <div className='md:hidden block'>
       <MobileNav />
