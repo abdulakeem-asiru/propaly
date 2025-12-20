@@ -7,6 +7,7 @@ import Steps from "@/components/home/Steps";
 import Pricing from "@/components/home/Pricing";
 import { Faq } from "@/components/home/Faq";
 import Cta from "@/components/home/Cta";
+import Footer from "@/components/home/Footer";
 
 export default function Home() {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
       </div>
        <div>
         <Cta />
+      </div>
+        <div>
+        <Footer />
       </div>
     </section>
   );
