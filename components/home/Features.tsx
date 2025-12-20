@@ -68,11 +68,11 @@ const Features = () => {
 
   return (
     <div className="flex flex-col gap-8 items-center" ref={fadeInUpRef}>
-      <h2 className="md:text-4xl text-3xl  text-black/80 font-semibold max-w-[500px] text-center leading-10">
+      <h2 className="md:text-4xl text-3xl  text-black/80 font-semibold  max-w-[500px] text-center leading-10">
         Powerful Features to Transform <span className="text-(--primary-color)">Realtors</span> Journey
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-7xl rounded-lg p-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-full xl:w-7xl rounded-lg p-8">
         {/* Sticky Cards */}
         <div ref={columnRef} className="flex flex-col gap-4">
           {featuresContent.map((feature, index) => {

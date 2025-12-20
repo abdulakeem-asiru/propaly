@@ -6,8 +6,8 @@ import Link from 'next/link';
 const Pricing = () => {
   return (
     <div className='flex items-center gap-6 flex-col pb-20' >
-      <h3 className='text-4xl font-semibold max-w-lg text-center leading-10'>Choose a flexible plan that fits your needs</h3>
-      <div className='flex md:flex-row flex-col gap-6 items-center justify-center mt-15'>
+      <h3 className='md:text-4xl text-3xl font-semibold max-w-lg text-center leading-8 md:leading-10'>Choose a flexible plan that fits your needs</h3>
+      <div className='grid xl:grid-cols-3 md:grid-cols-2 gap-6 items-center justify-center mt-15'>
         <div className='w-100 border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
             <span className='flex gap-2'><CircleStar className='rounded-full p-1 border 
             text-(--primary-color) border-(--primary-color)' /> Basis Plan</span>

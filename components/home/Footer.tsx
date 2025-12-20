@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
     <footer className="bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Top Section */}
-        <div className="flex justify-between items-start max-w-5xl mx-auto">
+        <div className="flex justify-between items-start max-w-5xl mx-auto md:flex-row flex-col gap-4">
           {/* Brand */}
           <div className="space-y-8">
             <div className="flex items-center">

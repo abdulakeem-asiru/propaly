@@ -58,7 +58,7 @@ const Value = () =>{
        Everything You Need to Convert, <span className="text-(--primary-color)">Retain</span>, and Grow Customers
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3  gap-4 staggered-cards">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-4 staggered-cards">
         {OurValues.map(({ title, description, icon: Icon }) => (
           <div key={title} className="w-sm h-60 border border-(--primary-color)/30 rounded-2xl p-6 flex flex-col gap-2">
             <Icon className="w-10 h-10 border border-(--primary-color)/20 p-2 rounded-full text-(--primary-color) mb-2 " />

@@ -14,10 +14,10 @@ export default function Home() {
     <section>
       <Navbar />
     <Hero />
-      <div className="mt-15 flex flex-col justify-center gap-8 items-center px-4">
+       <div className="mt-15 flex flex-col justify-center gap-8 items-center px-4">
         <h3 className="text-base font-medium text-black/80">Trusted by 50,000+ businesses for innovative design and growth.</h3>
         <TrustedClient />
-      </div>
+      </div> 
       <div>
         <Features />
       </div>

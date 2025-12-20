@@ -78,7 +78,7 @@ useGSAP(() => {
       {stepsContent.map((step, index) => (
         <div
           key={index}
-          className="rounded-2xl p-8 pb-0 w-screen md:w-[80vw] text-white flex md:flex-row flex-col justify-between gap-20 h-[420px]"
+          className="rounded-2xl p-8 pb-0 w-screen xl:w-[80vw] text-white flex md:flex-row flex-col justify-between gap-20 h-[420px]"
           style={{ backgroundColor: step.bgColor }}
         >
           {/* LEFT SIDE */}

@@ -25,8 +25,8 @@ const TrustedClientLogo =[
 ]
 export const TrustedClient = () => {
   return (
-    <div className='flex lg:max-w-6xl max-md:w-full  items-center justify-center bg-background'>
-      <Marquee>
+    <div className='flex w-full  items-center justify-center bg-background'>
+      <Marquee className='w-6xl'>
       <MarqueeFade side="left" />
       <MarqueeFade side="right" />
       <MarqueeContent>

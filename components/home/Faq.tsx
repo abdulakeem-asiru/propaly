@@ -65,7 +65,7 @@ const propalyFAQs = [
 export function Faq() {
   const fadeInUpRef = useFadeInUp()
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8 p-4">
       <h3 className="md:text-4xl text-2xl text-center font-semibold mb-10">Frequently Asked Questions</h3>
     <Accordion
       type="single"

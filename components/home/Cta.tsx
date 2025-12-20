@@ -8,7 +8,7 @@ const Cta = () => {
     const fadeInUp = useFadeInUp()
 
   return (
-    <div className='max-w-7xl bg-linear-180 from-[#FFC2A9] relative to-[#FF6347] h-100 rounded-3xl flex flex-col justify-center items-center mx-auto my-20 px-4' ref={fadeInUp}>
+    <div className='max-w-7xl bg-linear-180 from-[#FFC2A9] relative to-[#FF6347] h-100 rounded-3xl flex flex-col justify-center items-center mx-auto md:my-20 my-10 px-4' ref={fadeInUp}>
       <div className='flex flex-col gap-4 justify-center items-center'>
         <Logo className='text-white'/>
         <h2 className="text-3xl max-w-120 text-center font-bold text-white mt-4">Ready to Grow Your Business Smarter?</h2>
