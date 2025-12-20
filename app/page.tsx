@@ -6,6 +6,7 @@ import Hero from "@/components/home/Hero";
 import Steps from "@/components/home/Steps";
 import Pricing from "@/components/home/Pricing";
 import { Faq } from "@/components/home/Faq";
+import Cta from "@/components/home/Cta";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
       </div>
          <div>
         <Faq />
+      </div>
+       <div>
+        <Cta />
       </div>
     </section>
   );

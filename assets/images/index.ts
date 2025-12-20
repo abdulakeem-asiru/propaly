@@ -8,6 +8,7 @@ import HouseMini from './house-mini.svg'
 import CoinMini from './coin-mini.svg'
 import CardMini from './card-mini.svg'
 import Plane from './plane-mini.svg'
+import CTABg from './ctabg.svg'
 
 export { Lekki, Estate, HeroBg, HeroImg, Plane,
-         Mockup, Mockup2, HouseMini, CoinMini, CardMini}
+         Mockup, Mockup2, HouseMini, CoinMini, CardMini, CTABg}
