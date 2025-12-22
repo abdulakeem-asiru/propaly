@@ -22,7 +22,7 @@ const useFadeInUp = (options = {}) => {
        scrollTrigger: {
         // markers: true,
         trigger: el,
-        start: "top 40%",
+        start: "top 60%",
         ...options}
         }
     );
