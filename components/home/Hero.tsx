@@ -22,7 +22,7 @@ const Hero = () => {
         </button>
       </div>
       <div className="mt-15">
-        <Image src={HeroImg} alt="Hero Background" width={1200} height={400} />
+        <Image src={HeroImg} alt="Hero Background" width={1200} height={400} className='shadow-xl rounded-2xl' />
       </div>
       </div> 
   )

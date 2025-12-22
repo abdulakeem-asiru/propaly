@@ -56,9 +56,9 @@ function NavSection({
               href={href}
               className={clsx(
                 "flex h-10 items-center gap-2 pl-3 text-[16px] transition-colors rounded-md",
-                "text-(--text-secondary) hover:bg-(--primary-color)/15 hover:text-(--text-primary)",
+                "text-(--text-secondary) hover:bg-(--primary-color) hover:text-white",
                 {
-                  "text-black bg-(--primary-color)/15 font-medium":
+                  "text-white bg-(--primary-color) font-medium":
                     isActive,
                 }
               )}
