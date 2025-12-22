@@ -35,7 +35,7 @@ export default function Home() {
          <div>
         <Faq />
       </div>
-       <div>
+       <div className="p-4">
         <Cta />
       </div>
         <div>

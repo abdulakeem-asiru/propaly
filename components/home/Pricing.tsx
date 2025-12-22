@@ -5,10 +5,10 @@ import Link from 'next/link';
 
 const Pricing = () => {
   return (
-    <div className='flex items-center gap-6 flex-col pb-20' >
+    <div className='flex items-center gap-6 flex-col pb-20 p-4' >
       <h3 className='md:text-4xl text-3xl font-semibold max-w-lg text-center leading-8 md:leading-10'>Choose a flexible plan that fits your needs</h3>
-      <div className='grid xl:grid-cols-3 md:grid-cols-2 gap-6 items-center justify-center mt-15'>
-        <div className='w-100 border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
+      <div className='grid xl:grid-cols-3 md:grid-cols-2 w-full gap-6 items-center justify-center mt-15'>
+        <div className='w-full border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
             <span className='flex gap-2'><CircleStar className='rounded-full p-1 border 
             text-(--primary-color) border-(--primary-color)' /> Basis Plan</span>
             <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'><DollarSign />14 </span>
@@ -33,7 +33,7 @@ const Pricing = () => {
      <div className="absolute -top-10 inline-flex justify-center rounded-tl-2xl rounded-tr-2xl left-1/2 -translate-x-1/2 bg-(--primary-color) text-white py-4 -z-10  w-full">
     ⭐ Popular
   </div>
-     <div className='w-100 border-(--primary-color)/50 border-2 px-4 py-6 rounded-2xl space-y-4 bg-white'>
+     <div className='w-full border-(--primary-color)/50 border-2 px-4 py-6 rounded-2xl space-y-4 bg-white'>
             <span className='flex gap-2'><CircleStar className='rounded-full p-1 border 
             text-(--primary-color) border-(--primary-color)' /> Premium Plan</span>
             <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'><DollarSign />32 </span>
@@ -55,7 +55,7 @@ const Pricing = () => {
 </ul>
         </div>
         </div>     
-        <div className='w-100 border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
+        <div className='w-full border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
             <span className='flex gap-2'><CircleStar className='rounded-full p-1 border 
             text-(--primary-color) border-(--primary-color)' /> Enterprise Plan</span>
             <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'><DollarSign />42 </span>
