@@ -53,12 +53,12 @@ const Value = () =>{
     useStaggerEffect(".staggered-cards > div");
     const fadeInUpRef = useFadeInUp()
     return(
-<div className="flex flex-col gap-12 items-center" ref={fadeInUpRef}>
-             <h2 className="md:p-2 p-4 md:text-4xl text-3xl text-black/80 font-semibold max-w-[600px] text-center leading-10">
+<div className="flex flex-col md:gap-12 gap-8 items-center" ref={fadeInUpRef}>
+             <h2 className="md:p-2 p-4 md:text-4xl text-2xl text-black/80 font-semibold max-w-[600px] text-center leading-8 md:leading-10">
        Everything You Need to Convert, <span className="text-(--primary-color)">Retain</span>, and Grow Customers
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 p-4 gap-4 staggered-cards">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-4 gap-4 staggered-cards">
         {OurValues.map(({ title, description, icon: Icon }) => (
           <div key={title} className="md:w-sm w-full h-60 border border-(--primary-color)/30 rounded-2xl p-6 flex flex-col gap-2">
             <Icon className="w-10 h-10 border border-(--primary-color)/20 p-2 rounded-full text-(--primary-color) mb-2 " />

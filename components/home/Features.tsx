@@ -68,7 +68,7 @@ const Features = () => {
 
   return (
     <div className="flex flex-col gap-8 items-center" ref={fadeInUpRef}>
-      <h2 className="md:text-4xl text-3xl  text-black/80 font-semibold  max-w-[500px] text-center leading-10">
+      <h2 className="md:text-4xl text-2xl  text-black/80 font-semibold px-4 max-w-[500px] text-center leading-8 md:leading-10">
         Powerful Features to Transform <span className="text-(--primary-color)">Realtors</span> Journey
       </h2>
 
