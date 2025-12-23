@@ -54,8 +54,12 @@ cp .env.example .env.local
 npm run dev
 
 ## Screenshots
+<p align="center">  
 <img width="1883" height="886" alt="screenshot-1766455602958" src="https://github.com/user-attachments/assets/b6c3fbdb-f410-4d1c-a861-a193d103e3ae" />
+</p>
+<p align="center">  
 <img width="1500" height="1125" alt="propaly dashboard mockup" src="https://github.com/user-attachments/assets/35caa39b-c5e0-4d25-aff9-37337118a77e" />
+</p>
 
 ## Author
 Abdulakeem - Frontend Developer
