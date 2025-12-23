@@ -1,17 +1,18 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
+import Logo from "../shared/Logo"
+import { NAV_MENU } from "@/lib/constant"
 
 
 export function MobileNav() {
@@ -22,28 +23,36 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
+          <SheetTitle><Logo /></SheetTitle>
+
         </SheetHeader>
-        <div className="grid flex-1 auto-rows-min gap-6 px-4">
-          <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Name</Label>
-            <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
-          </div>
-          <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-username">Username</Label>
-            <Input id="sheet-demo-username" defaultValue="@peduarte" />
-          </div>
-        </div>
-        <SheetFooter>
-          <Button type="submit">Save changes</Button>
+        <NavMenu />
+        <SheetFooter>     
+          <Link href="/dashboard"><button 
+          className="bg-black w-full inline-flex text-white px-4 py-3 rounded-lg justify-center items-center gap-2  transition-colors"
+          >
+          <span className="font-medium text-[16px]">Get Started</span>
+          <ArrowRight className="w-5 h-5" />
+        </button></Link>
           <SheetClose asChild>
             <Button variant="outline">Close</Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>
     </Sheet>
+  )
+}
+
+const NavMenu = () => {
+  return (
+    <nav>
+        <ul className="md:flex-row flex-col p-4 flex gap-12 text-base font-medium">
+          {NAV_MENU.map((item) => (
+            <li key={item.href}>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+    </nav>
   )
 }

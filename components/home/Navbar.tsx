@@ -10,11 +10,11 @@ const Navbar = () => {
     <header className="max-w-[850px] md:w-full h-18 border border-white rounded-md shadow-md bg-white mx-auto flex items-center justify-between mt-10 py-6 px-3 ">
         <Logo />
     <div className='md:hidden block'>
-      <MobileNav />
+      <MobileNav/>
     </div>
 
         <div className='hidden md:block'>       
-      <NavMenu />
+      <NavMenu/>
         </div>
         <div className='hidden md:block'>      
           <Link href="/dashboard"><button 
@@ -33,7 +33,7 @@ export default Navbar
 const NavMenu = () => {
   return (
     <nav>
-        <ul className="flex gap-8 text-base font-medium">
+        <ul className="md:flex-row flex-col flex gap-8 text-base font-medium">
           {NAV_MENU.map((item) => (
             <li key={item.href}>
               <a href={item.href}>{item.label}</a>
