@@ -20,7 +20,7 @@ export default function Home() {
         <h3 className="text-base font-medium text-black/80">Trusted by 50,000+ businesses for innovative design and growth.</h3>
         <TrustedClient />
       </div> 
-      <div id="feature">
+      <div id="features">
         <Features />
       </div>
       <div className="mt-16">
