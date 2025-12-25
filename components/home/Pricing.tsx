@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Pricing = () => {
   return (
-    <div className='flex items-center gap-6 flex-col pb-20 p-4' >
+    <div className='flex items-center gap-6 flex-col pb-20 p-4 max-w-7xl mx-auto'>
       <h3 className='md:text-4xl text-2xl font-semibold max-w-lg text-center leading-8 md:leading-10'>Choose a <span className="text-(--primary-color)">Flexible</span> Plan That Fits Your Needs</h3>
       <div className='grid xl:grid-cols-3 md:grid-cols-2 w-full gap-6 items-center justify-center md:mt-15'>
         <div className='w-full border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
