@@ -20,7 +20,7 @@ const stepsContent = [
     title: "Automated Marketing",
     bullets: ["Marketing", "AI", "Operations", "Communication"],
     cardImage: Mockup.src,
-    bgColor: "#0F3B28",
+    bgColor: "#1C1C1C",
     icons: ["building", "users", "shield"],
   },
   {
@@ -28,7 +28,7 @@ const stepsContent = [
     title: "Property Management",
     bullets: ["Marketing", "AI", "Operations", "Communication"],
     cardImage: Mockup.src,
-    bgColor: "#0D3725",
+    bgColor: "#1C1C1C",
     icons: ["home", "upload", "form"],
   },
   {
@@ -36,7 +36,7 @@ const stepsContent = [
     title: "Performance Tracking",
     bullets: ["Marketing", "AI", "Operations", "Communication"],
     cardImage: Mockup.src,
-    bgColor: "#0B3220",
+    bgColor: "#1C1C1C",
     icons: ["chart", "automation", "export"],
   },
 ];
@@ -116,7 +116,7 @@ useGSAP(() => {
           </div>
 
           {/* RIGHT SIDE IMAGE → stays at bottom */}
-          <div className="relative self-end w-80 h-70 rounded-xl  rounded-b-none overflow-hidden">
+          <div className="relative self-end w-80 h-100 rounded-xl  rounded-b-none overflow-hidden">
             <Image
               src={step.cardImage}
               alt={step.title}
