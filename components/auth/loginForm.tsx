@@ -45,7 +45,7 @@ export function LoginForm({
               Forgot your password?
             </Link>
           </div>
-          <Input id="password" type="password" required />
+          <Input id="password"  placeholder="Enter a secure Password" type="password" required />
         </Field>
         <Field>
           <Button type="submit" className="bg-(--primary-color)">Login</Button>

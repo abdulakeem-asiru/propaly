@@ -40,7 +40,7 @@ export function SignupForm({
             <FieldLabel htmlFor="password">Password</FieldLabel>
          
           </div>
-          <Input id="password" type="password" required />
+          <Input id="password" type="password" placeholder="Enter your Password" required />
         </Field>
         <Field>
               <Button type="submit" className="bg-(--primary-color)"> Signup </Button>
