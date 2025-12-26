@@ -17,8 +17,8 @@ const Navbar = () => {
       <NavMenu/>
         </div>
         <div className='hidden md:block'>      
-          <Link href="/dashboard"><button 
-          className="bg-black  text-white px-4 py-3 rounded-lg flex items-center gap-2  transition-colors"
+          <Link href="/auth/login"><button 
+          className="bg-black  text-white px-4 py-3 rounded-lg flex items-center gap-2 cursor-pointer transition-colors"
           >
           <span className="font-medium text-[16px]">Get Started</span>
           <ArrowRight className="w-5 h-5" />

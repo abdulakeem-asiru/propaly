@@ -35,7 +35,9 @@ export function SignupForm({
           <Input id="password" type="password" required />
         </Field>
         <Field>
-          <Button type="submit" className="bg-(--primary-color)">Signup</Button>
+          <Link href="/dashboard">    
+              <Button type="submit" className="bg-(--primary-color)">Signup</Button>
+              </Link>
         </Field>
         <FieldSeparator>Or continue with</FieldSeparator>
         <Field>
