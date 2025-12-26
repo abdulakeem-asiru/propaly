@@ -1,3 +1,4 @@
+'use client'
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -9,13 +10,20 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
+import { useRouter} from 'next/navigation'
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  const router = useRouter()
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+    router.push('/dashboard');
+  }
   return (
-    <form className={cn("", className)} {...props}>
+    <form className={cn("", className)} {...props} onSubmit={handleSubmit}>
       <FieldGroup className="space-y-2">
         <div className="flex flex-col items-center gap-1 text-center">
           <h1 className="text-2xl font-bold">Login to your account</h1>
@@ -40,9 +48,7 @@ export function LoginForm({
           <Input id="password" type="password" required />
         </Field>
         <Field>
-          
-          <Button type="submit" className="bg-(--primary-color)"><Link href="/dashboard">Login </Link></Button>
-         
+          <Button type="submit" className="bg-(--primary-color)">Login</Button>
         </Field>
         <FieldSeparator>Or continue with</FieldSeparator>
         <Field>
