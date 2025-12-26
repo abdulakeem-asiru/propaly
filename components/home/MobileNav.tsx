@@ -28,7 +28,7 @@ export function MobileNav() {
         </SheetHeader>
         <NavMenu />
         <SheetFooter>     
-          <Link href="/dashboard"><button 
+          <Link href="/auth/login"><button 
           className="bg-black w-full inline-flex text-white px-4 py-3 rounded-lg justify-center items-center gap-2  transition-colors"
           >
           <span className="font-medium text-[16px]">Get Started</span>
