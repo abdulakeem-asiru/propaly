@@ -19,7 +19,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
             </Link>
        
         <button className='bg-transparent border-none cursor-pointer inline-flex items-center gap-2
-        hover:bg-transparent hover:scale-[1.1] text-[16px] text-(--text-secondary) shadow-none'
+        hover:bg-transparent hover:scale-[1.1] text-sm text-(--text-secondary) shadow-none'
         onClick={() => {router.back()}}><ArrowLeft />Go Back</button>
       </header>
         <div className="flex flex-1 items-center justify-center">
