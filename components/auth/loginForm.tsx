@@ -16,7 +16,7 @@ export function LoginForm({
 }: React.ComponentProps<"form">) {
   return (
     <form className={cn("", className)} {...props}>
-      <FieldGroup className="space-y-6">
+      <FieldGroup className="space-y-2">
         <div className="flex flex-col items-center gap-1 text-center">
           <h1 className="text-2xl font-bold">Login to your account</h1>
           <p className="text-muted-foreground text-sm text-balance">
