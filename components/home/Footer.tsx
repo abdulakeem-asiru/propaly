@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="mt-16 pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           <p>
-            Obliq © 2024–2028 ·{" "}
+            Propaly © 2024–2028 ·{" "}
             <span className="underline cursor-pointer">
               Manage Cookies
             </span>
