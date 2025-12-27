@@ -2,8 +2,9 @@ import React from 'react'
 import Logo from '../shared/Logo'
 import {NAV_MENU} from '@/lib/constant'
 import {  ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { MobileNav } from './MobileNav'
+import { WaitList } from '../waitlist/WaitlistModal'
 
 const Navbar = () => {
   return (
@@ -17,12 +18,22 @@ const Navbar = () => {
       <NavMenu/>
         </div>
         <div className='hidden md:block'>      
-          <Link href="/auth/login"><button 
+          {/* <Link href="/auth/login">
+          <button 
           className="bg-black  text-white px-4 py-3 rounded-lg flex items-center gap-2 cursor-pointer transition-colors"
           >
           <span className="font-medium text-[16px]">Get Started</span>
           <ArrowRight className="w-5 h-5" />
-        </button></Link>
+        </button>
+        </Link> */}
+        <WaitList>
+            <button 
+          className="bg-black  text-white px-4 py-3 rounded-lg flex items-center gap-2 cursor-pointer transition-colors"
+          >
+          <span className="font-medium text-[16px]">Get Started</span>
+          <ArrowRight className="w-5 h-5" />
+        </button>
+        </WaitList>
           </div>
     </header>
   )

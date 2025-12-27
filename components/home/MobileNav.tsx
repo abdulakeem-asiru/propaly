@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { ArrowRight, Menu } from "lucide-react"
+// import Link from "next/link"
 import {
   Sheet,
   SheetClose,
@@ -10,9 +10,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
 import Logo from "../shared/Logo"
 import { NAV_MENU } from "@/lib/constant"
+import { WaitList } from "../waitlist/WaitlistModal"
 
 
 export function MobileNav() {
@@ -28,12 +28,22 @@ export function MobileNav() {
         </SheetHeader>
         <NavMenu />
         <SheetFooter>     
-          <Link href="/auth/login"><button 
+          {/* <Link href="/auth/login">
+          <button 
           className="bg-black w-full inline-flex text-white px-4 py-3 rounded-lg justify-center items-center gap-2  transition-colors"
           >
           <span className="font-medium text-[16px]">Get Started</span>
           <ArrowRight className="w-5 h-5" />
-        </button></Link>
+        </button>
+        </Link> */}
+        <WaitList>
+             <button 
+          className="bg-black w-full inline-flex text-white px-4 py-3 rounded-lg justify-center items-center gap-2  transition-colors"
+          >
+          <span className="font-medium text-[16px]">Get Started</span>
+          <ArrowRight className="w-5 h-5" />
+        </button>
+        </WaitList>
           <SheetClose asChild>
             <Button variant="outline">Close</Button>
           </SheetClose>
