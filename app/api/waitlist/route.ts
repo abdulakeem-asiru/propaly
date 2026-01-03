@@ -19,7 +19,7 @@ export async function POST(req : Request) {
     const { error } = await supabase.from("waitlist").insert({
       profession,
       email
-    })
+    }).select();
 
     if (error) {
       return NextResponse.json(
