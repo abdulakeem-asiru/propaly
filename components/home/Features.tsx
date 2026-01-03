@@ -14,7 +14,7 @@ const Features = () => {
   const fadeInUpRef = useFadeInUp();
   const columnRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<HTMLImageElement[]>([]); // ref array for all images
-  const images = [Mockup, Mockup2, Mockup, Mockup2, Mockup]; 
+  const images = [ Mockup2, Mockup, Mockup, Mockup2, Mockup]; 
   const featuresContent = [
     {
       icon : Laptop2,
