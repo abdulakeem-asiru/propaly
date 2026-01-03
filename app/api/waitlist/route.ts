@@ -19,11 +19,11 @@ export async function POST(req : Request) {
     const { error } = await supabase.from("waitlist").insert({
       profession,
       email
-    }).select();
+    })
 
     if (error) {
       return NextResponse.json(
-        { error: "Failed to update profile" },
+        { error: "Failed to update profile", errorDetail: error.message },
         { status: 500 }
       );
     }
@@ -33,6 +33,7 @@ export async function POST(req : Request) {
   { status: 200 }
 );
   } catch (error){
+    console.error("Waitlist error:", error);
     return NextResponse.json(
       { error: "An unexpected error occurred" },
       { status: 500 }
