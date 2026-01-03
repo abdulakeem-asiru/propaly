@@ -24,7 +24,7 @@ export const useStaggerEffect = (
         ease: "power3.out",
         scrollTrigger: {
           trigger: elements[0], // first element triggers the group
-          start: "top 30%",
+          start: "top 60%",
         },
         ...options,
       }

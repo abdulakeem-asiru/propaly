@@ -1,5 +1,5 @@
 'use client'
-import { Mockup, Plane, CardMini, CoinMini, HouseMini } from "@/assets/images";
+import { Mockup, Plane, CoinMini, HouseMini, AnalyticStat, PropertyStat } from "@/assets/images";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -19,7 +19,7 @@ const stepsContent = [
     category: "Marketing",
     title: "Automated Marketing",
     bullets: ["Marketing", "AI", "Operations", "Communication"],
-    cardImage: Mockup.src,
+    cardImage: AnalyticStat.src,
     bgColor: "#1C1C1C",
     icons: ["building", "users", "shield"],
   },
@@ -27,17 +27,9 @@ const stepsContent = [
     category: "Listing",
     title: "Property Management",
     bullets: ["Marketing", "AI", "Operations", "Communication"],
-    cardImage: Mockup.src,
+    cardImage: PropertyStat.src,
     bgColor: "#1C1C1C",
     icons: ["home", "upload", "form"],
-  },
-  {
-    category: "Performance",
-    title: "Performance Tracking",
-    bullets: ["Marketing", "AI", "Operations", "Communication"],
-    cardImage: Mockup.src,
-    bgColor: "#1C1C1C",
-    icons: ["chart", "automation", "export"],
   },
 ];
 
@@ -73,12 +65,12 @@ useGSAP(() => {
   return (
     <section className="overflow-x-hidden mt-10 md:mt-30">
     <div>
-    <div  ref={triggerRef}>
-    <div className="flex gap-8 px-5 md:px-10 mb-20" ref={sectionRef}>
+    <div  ref={triggerRef} className=" w-screen">
+    <div className="flex gap-8  px-5 md:px-10 mb-20" ref={sectionRef}>
       {stepsContent.map((step, index) => (
         <div
           key={index}
-          className="rounded-2xl p-8 pb-0 w-screen xl:w-[80vw] text-white flex md:flex-row flex-col justify-center md:justify-between gap-20 h-[420px]"
+          className="rounded-2xl p-8 pb-0 text-white flex md:flex-row flex-col justify-center md:justify-between gap-20 h-[420px]"
           style={{ backgroundColor: step.bgColor }}
         >
           {/* LEFT SIDE */}
@@ -104,8 +96,8 @@ useGSAP(() => {
             <div className="flex gap-4">
                 <div className="w-30 h-20 bg-[#eedabe] rounded-2xl flex justify-center items-center">
                 <Image src={Plane.src} alt="Plane Img" width={50} height={50}/></div>
-                <div className="w-30 h-20 bg-[#0be49b] rounded-2xl flex justify-center items-center">
-                <Image src={CardMini.src} alt="Plane Img" width={50} height={50}/></div>
+                {/* <div className="w-30 h-20 bg-[#0be49b] rounded-2xl flex justify-center items-center">
+                <Image src={CardMini.src} alt="Plane Img" width={50} height={50}/></div> */}
                 <div className="w-30 h-20 bg-[#cee9df] rounded-2xl flex justify-center items-center">
                 <Image src={HouseMini.src} alt="Plane Img" width={50} height={50}/></div>
                 <div className="w-30 h-20 bg-[#f1f9f6] rounded-2xl flex justify-center items-center">
@@ -121,7 +113,7 @@ useGSAP(() => {
               src={step.cardImage}
               alt={step.title}
               fill
-              className="object-cover"
+              className="object-contain rounded-2xl"
             />
           </div>
         </div>

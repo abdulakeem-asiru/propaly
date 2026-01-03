@@ -23,7 +23,7 @@ export default function Home() {
       <div id="features">
         <Features />
       </div>
-      <div className="mt-16">
+      <div className="">
         <Value />
       </div>
       <div className="bg-linear-to-b from-white via-(--primary-color)/10 to-white">
