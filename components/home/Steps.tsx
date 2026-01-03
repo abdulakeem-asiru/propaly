@@ -71,14 +71,14 @@ useGSAP(() => {
 });
 
   return (
-    <section className="overflow-x-hidden mt-30">
+    <section className="overflow-x-hidden mt-10 md:mt-30">
     <div>
     <div  ref={triggerRef}>
     <div className="flex gap-8 px-5 md:px-10 mb-20" ref={sectionRef}>
       {stepsContent.map((step, index) => (
         <div
           key={index}
-          className="rounded-2xl p-8 pb-0 w-screen xl:w-[80vw] text-white flex md:flex-row flex-col justify-between gap-20 h-[420px]"
+          className="rounded-2xl p-8 pb-0 w-screen xl:w-[80vw] text-white flex md:flex-row flex-col justify-center md:justify-between gap-20 h-[420px]"
           style={{ backgroundColor: step.bgColor }}
         >
           {/* LEFT SIDE */}
@@ -86,7 +86,7 @@ useGSAP(() => {
             <div>
               <p className="opacity-70 mb-2">{step.category}</p>
 
-              <h3 className="md:text-5xl text-3xl font-bold leading-14 max-w-50 mb-6">
+              <h3 className="md:text-5xl text-3xl font-bold md:leading-14 max-w-50 mb-6">
                 {step.title}
               </h3>
 
