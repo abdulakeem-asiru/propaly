@@ -3,16 +3,21 @@ import { Label } from '@/components/ui/label';
 import { motion } from 'motion/react';
 import React, { useState} from 'react';
 import { Upload, Building2 } from 'lucide-react';
-import { OnboardingData } from './OnboardingForm';
+import { OnboardingSchemaType } from '@/schemas/onboardingSchema';
+import { UseFormReturn } from 'react-hook-form';
 
 
 
-const StepOne = ({ formData, setFormData, next } : {next: () => void;  formData: OnboardingData; setFormData: React.Dispatch<React.SetStateAction<any>> }) => {
+const StepOne = ({ form, next } : {form: UseFormReturn<OnboardingSchemaType>; next: () => void; }) => {
     const [logoPreview, setLogoPreview] = useState<string | null>(null);
+    const watchedCompanyName = form.watch("companyName");
     const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      setFormData({ ...formData, logo: file });
+      form.setValue("logo", file, {
+      shouldDirty: true,
+      shouldValidate: true,
+    });
       const reader = new FileReader();
       reader.onloadend = () => {
         setLogoPreview(reader.result as string);
@@ -20,6 +25,11 @@ const StepOne = ({ formData, setFormData, next } : {next: () => void;  formData:
       reader.readAsDataURL(file);
     }
   };
+  const handleNext = async () => {
+    const isValid = await form.trigger("logo");
+  if (!isValid) return;
+    next();
+  }
   return (
     <div>
               <motion.div
@@ -48,12 +58,11 @@ const StepOne = ({ formData, setFormData, next } : {next: () => void;  formData:
                       id="companyName"
                       type="text"
                       placeholder="e.g., Sunset Realty Group"
-                      value={formData.companyName}
-                      onChange={(e) =>
-                        setFormData({ ...formData, companyName: e.target.value })
-                      }
+                      {...form.register("companyName")}
+                      required
                       className="h-12 border-slate-200 focus:border-(--primary-color) focus:ring-(--primary-color)"
                     />
+                     <p className='text-red-600 text-sm'>{form.formState.errors.companyName?.message}</p>
                   </div>
 
                   <div>
@@ -74,7 +83,7 @@ const StepOne = ({ formData, setFormData, next } : {next: () => void;  formData:
                       >
                         <Upload className="w-5 h-5 text-slate-400" />
                         <span className="text-sm text-slate-600">
-                          {formData.logo ? formData.logo.name : 'Upload logo'}
+                          {form.getValues("logo") ? form.getValues("logo")?.name : 'Upload logo'}
                         </span>
                       </label>
                       {logoPreview && (
@@ -91,13 +100,16 @@ const StepOne = ({ formData, setFormData, next } : {next: () => void;  formData:
                         </motion.div>
                       )}
                     </div>
+                     <p className='text-red-600 text-sm'>{form.formState.errors.logo?.message}</p>
                   </div>
                 </div>
               </motion.div>
                  <div className="mt-8 flex justify-end">
                   <button
-                  onClick={() => next()}
-                    className="bg-(--primary-color) cursor-pointer rounded-full hover:bg-[#e55d1f] text-white px-8 h-12"
+                  onClick={() => handleNext()}
+                  disabled={!watchedCompanyName && true}
+                    className={`bg-(--primary-color) cursor-pointer rounded-full hover:bg-[#e55d1f]
+                       text-white px-8 h-12 ${watchedCompanyName ? '' : 'opacity-70 cursor-not-allowed'}`} 
                   >
                     Continue
                   </button>

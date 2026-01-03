@@ -86,7 +86,7 @@ useGSAP(() => {
             <div>
               <p className="opacity-70 mb-2">{step.category}</p>
 
-              <h3 className="text-5xl font-bold leading-14 max-w-50 mb-6">
+              <h3 className="md:text-5xl text-3xl font-bold leading-14 max-w-50 mb-6">
                 {step.title}
               </h3>
 
@@ -116,7 +116,7 @@ useGSAP(() => {
           </div>
 
           {/* RIGHT SIDE IMAGE → stays at bottom */}
-          <div className="relative self-end w-80 h-100 rounded-xl  rounded-b-none overflow-hidden">
+          <div className="relative md:block hidden self-end w-80 h-100 rounded-xl  rounded-b-none overflow-hidden">
             <Image
               src={step.cardImage}
               alt={step.title}

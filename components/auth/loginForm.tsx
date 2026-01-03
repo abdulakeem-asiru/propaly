@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import React, { useState } from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm, FormProvider } from "react-hook-form"
-import { loginFormSchema, LoginFormSchemaType } from "@/schemas/loginSchema"
-import toast, {Toaster} from "react-hot-toast"
-import { login } from "@/actions/auth"
-import { useRouter } from "next/navigation"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import React, { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, FormProvider } from "react-hook-form";
+import { loginFormSchema, LoginFormSchemaType } from "@/schemas/loginSchema";
+import toast, { Toaster } from "react-hot-toast";
+import { login, resendConfirmationEmail } from "@/actions/auth";
+import { useRouter } from "next/navigation";
 import {
   Field,
   FieldDescription,
@@ -16,16 +16,16 @@ import {
   FieldGroup,
   FieldLabel,
   FieldSeparator,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import Link from "next/link"
+} from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
-  const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const form = useForm<LoginFormSchemaType>({
     resolver: zodResolver(loginFormSchema),
@@ -33,28 +33,54 @@ export function LoginForm({
       email: "",
       password: "",
     },
-  })
+  });
 
   const onSubmit = async (values: LoginFormSchemaType) => {
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
-      const response = await login(values)
+      const response = await login(values);
+
+      if (
+    response?.error
+      ?.toString()
+      .toLowerCase()
+      .includes("email not confirmed")
+  ) {
+    toast.error(
+      (t) => (
+        <span>
+          Email not confirmed.
+          <button className="ml-2 text-blue-500 underline"
+            onClick={async () => {
+              await resendConfirmationEmail(values.email);
+              toast.dismiss(t.id);
+              toast.success("Verification email sent");
+            }}
+          >
+            Resend
+          </button>
+        </span>
+      ),
+      { duration: 8000 }
+    );
+    return;
+  }
 
       if (response?.error) {
-        toast.error(response.error.toString())
-        return
+        toast.error(response.error.toString());
+        return;
       }
 
-      toast.success("Authenticated successfully")
-      router.push("/dashboard")
+      toast.success("Authenticated successfully");
+      router.push("/dashboard");
     } catch (error) {
-      console.error(error)
-      toast.error("An unexpected error occurred")
+      console.error(error);
+      toast.error("An unexpected error occurred");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <FormProvider {...form}>
@@ -142,14 +168,17 @@ export function LoginForm({
 
             <FieldDescription className="text-center">
               Don&apos;t have an account?{" "}
-              <Link href="/auth/signup" className="underline underline-offset-4">
+              <Link
+                href="/auth/signup"
+                className="underline underline-offset-4"
+              >
                 Sign up
               </Link>
             </FieldDescription>
           </Field>
         </FieldGroup>
       </form>
-      <Toaster /> 
+      <Toaster />
     </FormProvider>
-  )
+  );
 }

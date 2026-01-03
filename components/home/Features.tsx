@@ -83,11 +83,11 @@ const Features = () => {
             className={`sticky-card items-center justify-center w-full md:h-70 bg-white border-2 border-(--primary-color)/10 rounded-2xl sticky top-20 border-b-3`}
             style={{ top: `${80 + 15 * index}px` }}
           >
-            <div className='p-8'>
+            <div className='md:p-8 p-4'>
               <Icon className="w-10 h-10 m-4 text-(--primary-color)" />
               <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2 text-black/80">{feature.title}</h3>
-                <p className="text-(--text-secondary)">{feature.description}</p>
+                <h3 className="md:text-xl text-lg  font-semibold mb-2 text-black/80">{feature.title}</h3>
+                <p className="text-(--text-secondary) md:text-base text-sm">{feature.description}</p>
               </div>
             </div>
           </div>

@@ -1,27 +1,52 @@
 'use client';
 import { useState } from 'react';
 import {AnimatePresence } from 'motion/react';
-import { Check, CheckCircle2 } from 'lucide-react';
+import { Check } from 'lucide-react';
+import { useForm, FormProvider } from "react-hook-form";
+import { onboardingSchema, OnboardingSchemaType } from '@/schemas/onboardingSchema';
+import { zodResolver } from "@hookform/resolvers/zod";
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree';
-
-export interface OnboardingData {
-  companyName: string;
-  logo: File | null;
-  profession: string;
-  source: string;
-}
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const OnboardingForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState<OnboardingData>({
-    companyName: '',
-    logo: null,
-    profession: '',
-    source: '',
+  const form = useForm<OnboardingSchemaType>({
+    resolver: zodResolver(onboardingSchema),
+    defaultValues: {
+      companyName: '',
+      logo: null,
+      profession: '',
+      source: '',
+    },
   });
+
+  const onSubmit = async(data: OnboardingSchemaType) => {
+    setIsLoading(true);
+    try{
+       const res = await fetch('/api/onboarding', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+      if (!res.ok) {
+        toast.error("Failed to complete onboarding. Please try again.");
+      } else {
+        toast.success("Onboarding Completed Successfully!");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+    finally {
+      setIsLoading(false);
+    }
+  }
+
 
   const handleNext = () => {
     setStep((prev) => Math.min(prev + 1, 3));
@@ -33,7 +58,7 @@ const OnboardingForm = () => {
   return (
     <>
         {/* Step Indicator */}
-    <div className="my-8">
+    <div className="my-8 ">
         <div className="flex justify-center items-center gap-2">
             {[1,2,3].map((i) =>(
                 <>
@@ -68,19 +93,24 @@ const OnboardingForm = () => {
     
           <div className="mx-auto p-8 w-150 shadow-xl rounded-2xl border-0 bg-white/80 backdrop-blur-sm">
             <AnimatePresence mode="wait">
+              <FormProvider {...form}>
+                <form  onSubmit={form.handleSubmit(onSubmit)}>
                 {step === 1 && (
-                <StepOne formData={formData} setFormData={setFormData} next={handleNext} />
+                <StepOne  form={form} next={handleNext} />
                 
                 )}
 
             {step === 2 && (
-              <StepTwo formData={formData} setFormData={setFormData} 
-                      nextStep={handleNext} prevStep={handlePrev}/>
+              <StepTwo form={form} 
+                nextStep={handleNext} prevStep={handlePrev}/>
             )}
             {step === 3 && (
-              <StepThree prevStep={handlePrev} formData={formData} setFormData={setFormData} />
+            <StepThree prevStep={handlePrev} form={form} isLoading={isLoading} />
             )}
+             </form>
+              </FormProvider>
             </AnimatePresence>
+            <Toaster />
           </div>
       </>
   );

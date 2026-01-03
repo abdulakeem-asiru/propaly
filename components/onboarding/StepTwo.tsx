@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'motion/react';
 import {  Briefcase } from 'lucide-react';
-import { OnboardingData } from './OnboardingForm';
+import { UseFormReturn } from 'react-hook-form';
+import { OnboardingSchemaType } from '@/schemas/onboardingSchema';
 
 const professions = [
   'Real Estate Agent',
@@ -12,9 +13,9 @@ const professions = [
   'Leasing Agent',
 ];
 
-const StepTwo = ({formData, setFormData, nextStep, prevStep}: {nextStep: () => void, prevStep: () => void, 
-                formData : OnboardingData, 
-                setFormData: React.Dispatch<React.SetStateAction<OnboardingData>>}) => {
+const StepTwo = ({form, nextStep, prevStep}: {nextStep: () => void, prevStep: () => void, 
+                form: UseFormReturn<OnboardingSchemaType>}) => {
+                const selectedProfession = form.watch("profession");
   return (
     <div>
       <motion.div
@@ -41,9 +42,9 @@ const StepTwo = ({formData, setFormData, nextStep, prevStep}: {nextStep: () => v
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      onClick={() => setFormData({ ...formData, profession })}
+                      onClick={() => form.setValue("profession", profession)}
                       className={`p-4 rounded-lg border-2 transition-all text-left ${
-                        formData.profession === profession
+                        selectedProfession === profession
                           ? 'border-(--primary-color) bg-(--primary-color)/5 shadow-md'
                           : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                       }`}
@@ -51,12 +52,12 @@ const StepTwo = ({formData, setFormData, nextStep, prevStep}: {nextStep: () => v
                       <div className="flex items-center gap-3">
                         <div
                           className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                            formData.profession === profession
+                            selectedProfession === profession
                               ? 'border-(--primary-color)'
                               : 'border-slate-300'
                           }`}
                         >
-                          {formData.profession === profession && (
+                          {selectedProfession === profession && (
                             <motion.div
                               initial={{ scale: 0 }}
                               animate={{ scale: 1 }}
@@ -66,7 +67,7 @@ const StepTwo = ({formData, setFormData, nextStep, prevStep}: {nextStep: () => v
                         </div>
                         <span
                           className={`${
-                            formData.profession === profession
+                            form.getValues("profession") === profession
                               ? 'text-slate-900 font-medium'
                               : 'text-slate-700'
                           }`}
@@ -87,12 +88,15 @@ const StepTwo = ({formData, setFormData, nextStep, prevStep}: {nextStep: () => v
                   </button>
                   <button
                    onClick={() => nextStep()}
-                    className="bg-(--primary-color) rounded-full hover:bg-[#e55d1f] text-white px-8 h-12"
+                   disabled={!selectedProfession && true}
+                    className={`bg-(--primary-color) rounded-full hover:bg-[#e55d1f] text-white px-8 h-12
+                    ${selectedProfession ? '' : 'opacity-70 cursor-not-allowed'}`}
                   >
                     Continue
                   </button>
                 </div>
               </motion.div>
+              <p className='text-red-600 text-sm'>{form.formState.errors.profession?.message}</p>
     </div>
   )
 }

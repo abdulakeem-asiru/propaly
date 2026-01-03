@@ -2,6 +2,9 @@
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useState } from "react"
+import toast, {Toaster} from "react-hot-toast"
 import {
   Field,
   FieldDescription,
@@ -11,19 +14,48 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
+import { signupFormSchema, signupSchemaType } from "@/schemas/signupSchema"
+import { signUp } from "@/actions/auth"
+import { FormProvider, useForm } from "react-hook-form"
 
 export function SignupForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
-   const router = useRouter()
+  const router = useRouter()
+  const [isLoading, setIsLoading] = useState(false)
+  const form = useForm<signupSchemaType>({
+      resolver: zodResolver(signupFormSchema),
+      defaultValues: {
+        email: "",
+        password: "",
+      },
+    })
+
+     const onSubmit = async (values: signupSchemaType) => {
+        setIsLoading(true)
+    
+        try {
+          const response = await signUp(values)
+    
+          if (response?.error) {
+            toast.error(response.error.toString())
+            return
+          }
+    
+          toast.success("Registered successfully")
+          router.push("/auth/email-confirmation")
+        } catch (error) {
+          console.error(error)
+          toast.error("An unexpected error occurred")
+        } finally {
+          setIsLoading(false)
+        }
+      }
   
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      router.push('/dashboard');
-    }
   return (
-    <form className={cn("", className)} {...props}  onSubmit={handleSubmit}>
+    <FormProvider {...form}>
+    <form className={cn("", className)} {...props}  onSubmit={form.handleSubmit(onSubmit)}>
       <FieldGroup className="space-y-2">
         <div className="flex flex-col items-center gap-1 text-center">
           <h1 className="text-2xl font-bold">Signup to your account</h1>
@@ -33,17 +65,25 @@ export function SignupForm({
         </div>
         <Field>
           <FieldLabel htmlFor="email">Email</FieldLabel>
-          <Input id="email" type="email" placeholder="m@example.com" required />
+          <Input id="email" type="email" placeholder="m@example.com"
+           {...form.register("email")} required />
         </Field>
         <Field>
           <div className="flex items-center">
             <FieldLabel htmlFor="password">Password</FieldLabel>
          
           </div>
-          <Input id="password" type="password" placeholder="Enter your Password" required />
+          <Input id="password" type="password" {...form.register("password")}
+          placeholder="Enter your Password" required />
         </Field>
         <Field>
-              <Button type="submit" className="bg-(--primary-color)"> Signup </Button>
+               <Button
+                            type="submit"
+                            disabled={isLoading}
+                            className="bg-(--primary-color)"
+                          >
+                            {isLoading ? "Signing Up..." : "Sign Up"}
+                          </Button>
         </Field>
         <FieldSeparator>Or continue with</FieldSeparator>
         <Field>
@@ -76,7 +116,9 @@ export function SignupForm({
             </Link>
           </FieldDescription>
         </Field>
+        <Toaster />
       </FieldGroup>
     </form>
+    </FormProvider>
   )
 }

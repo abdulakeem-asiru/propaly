@@ -62,8 +62,8 @@ const Value = () =>{
         {OurValues.map(({ title, description, icon: Icon }) => (
           <div key={title} className="md:w-sm w-full h-60 border border-(--primary-color)/30 rounded-2xl p-6 flex flex-col gap-2">
             <Icon className="w-10 h-10 border border-(--primary-color)/20 p-2 rounded-full text-(--primary-color) mb-2 " />
-            <h4 className="text-xl font-semibold">{title}</h4>
-            <p className="text-base font-normal text-(--text-secondary)">{description}</p>
+            <h4 className="md:text-xl text-lg font-semibold">{title}</h4>
+            <p className="md:text-base text-sm font-normal text-(--text-secondary)">{description}</p>
           </div>
         ))}
       
