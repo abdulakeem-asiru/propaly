@@ -12,7 +12,9 @@ import CTABg from './ctabg.svg'
 import Placeholder from './placeholder.svg'
 import AnalyticStat from './analyticstat.png'
 import PropertyStat from './propertyStat.png'
+import Mockup3 from './mockup3.jpeg'
 
 
 export { Lekki, Estate, HeroBg, HeroImg, Plane,
-         Mockup, Mockup2, HouseMini, CoinMini, CardMini, CTABg, Placeholder, AnalyticStat, PropertyStat }
+         Mockup, Mockup2, HouseMini, CoinMini, CardMini, CTABg,
+          Placeholder, AnalyticStat, PropertyStat, Mockup3 }

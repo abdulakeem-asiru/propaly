@@ -1,6 +1,6 @@
 'use client'
 import { useRef } from 'react';
-import { Mockup, Mockup2 } from '@/assets/images';
+import { Mockup, Mockup2, Mockup3 } from '@/assets/images';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -14,7 +14,7 @@ const Features = () => {
   const fadeInUpRef = useFadeInUp();
   const columnRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<HTMLImageElement[]>([]); // ref array for all images
-  const images = [ Mockup2, Mockup, Mockup, Mockup2, Mockup]; 
+  const images = [ Mockup, Mockup3, Mockup,  Mockup2, Mockup]; 
   const featuresContent = [
     {
       icon : Laptop2,
@@ -59,7 +59,7 @@ const Features = () => {
     cards.forEach((card, index) => {
       ScrollTrigger.create({
         trigger: card,
-        start: "30% top",
+        start: "40% top",
         onEnter: () => setActiveImage(index),
         onEnterBack: () => setActiveImage(index)
       });
