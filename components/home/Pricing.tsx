@@ -49,10 +49,10 @@ const fadeInUp = useFadeInUp();
         <div className='w-full border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
             <span className='flex gap-2'><CircleStar className='rounded-full p-1 border 
             text-(--primary-color) border-(--primary-color)' /> Basis Plan</span>
-            <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'><DollarSign />14 </span>
-            <p className='text-(--text-primary) text-base font-normal'> /month</p></span>
+            {/* <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'>< />14 </span> */}
+            {/* <p className='text-(--text-primary) text-base font-normal'> /month</p></span> */}
             <p className='text-(--text-primary) max-w-70'>For solo agents & small property teams getting started</p>
-                <Link href="/dashboard">
+                <Link href="#">
   <button 
     className="bg-black font-medium text-white px-4 py-3 w-80 rounded-lg inline-flex justify-center mt-2 "
   >
@@ -74,10 +74,10 @@ const fadeInUp = useFadeInUp();
      <div className='w-full border-(--primary-color)/50 border-2 px-4 py-6 rounded-2xl space-y-4 bg-white'>
             <span className='flex gap-2'><CircleStar className='rounded-full p-1 border 
             text-(--primary-color) border-(--primary-color)' /> Premium Plan</span>
-            <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'><DollarSign />32 </span>
-            <p className='text-(--text-primary) text-base font-normal'> /month</p></span>
+            {/* <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'><DollarSign />32 </span>
+            <p className='text-(--text-primary) text-base font-normal'> /month</p></span> */}
             <p className='text-(--text-primary) max-w-70'>For growing real estate businesses that want more leads & automation</p>
-                <Link href="/dashboard">
+                <Link href="#">
   <button 
     className="bg-(--primary-color) font-medium text-white px-4 py-3 w-80 rounded-lg inline-flex justify-center mt-2 "
   >
@@ -96,10 +96,10 @@ const fadeInUp = useFadeInUp();
         <div className='w-full border-(--border-color) border px-4 py-6 rounded-2xl space-y-4'>
             <span className='flex gap-2'><CircleStar className='rounded-full p-1 border 
             text-(--primary-color) border-(--primary-color)' /> Enterprise Plan</span>
-            <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'><DollarSign />42 </span>
-            <p className='text-(--text-primary) text-base font-normal'> /month</p></span>
+            {/* <span className='flex items-end text-(--primary-color) font-semibold text-3xl'><span className='flex items-center'><DollarSign />42 </span>
+            <p className='text-(--text-primary) text-base font-normal'> /month</p></span> */}
             <p className='text-(--text-primary) max-w-70'>For agencies & large property firms scaling operations</p>
-                <Link href="/dashboard">
+                <Link href="#">
   <button 
     className="bg-black font-medium text-white px-4 py-3 w-80 rounded-lg inline-flex justify-center mt-2 "
   >

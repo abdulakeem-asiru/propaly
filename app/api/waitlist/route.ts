@@ -16,10 +16,11 @@ export async function POST(req : Request) {
       );
     }
 
-    const { email, profession} = validatedFields.data;
+    const { email, profession, interest } = validatedFields.data;
     const { error } = await supabase.from("waitlist").insert({
       profession,
-      email
+      email,
+    interest,
     }).select();
 
     if (error) {
