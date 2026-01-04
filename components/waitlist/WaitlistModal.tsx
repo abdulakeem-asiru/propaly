@@ -31,17 +31,17 @@ export function WaitList({ children }: { children: ReactNode }) {
   const onSubmit = async(data: WaitlistSchemaType) => {
     setIsLoading(true);
     try{
-       const res = await fetch('/api/waitlist', {
+       const res = await fetch('/api/waitlist/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
-      if (!res.ok) {
-        toast.error("Failed to join waitlist. Please try again.");
-      } else {
+    if (res.ok) {
         toast.success("Successfully Joined The Waitlist!");
+      } else {
+        toast.error("Failed to join waitlist. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);

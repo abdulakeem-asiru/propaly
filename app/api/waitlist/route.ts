@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 import z from "zod";
 
 export async function POST(req : Request) {
+
   try {
     const body = await req.json();
     const supabase = await createClient();
@@ -28,10 +29,13 @@ export async function POST(req : Request) {
       );
     }
 
-    return NextResponse.json(
+  if(!error){
+      return NextResponse.json(
   { success: true },
   { status: 200 }
 );
+  }
+
   } catch (error){
     console.error("Waitlist error:", error);
     return NextResponse.json(
